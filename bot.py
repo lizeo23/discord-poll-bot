@@ -1,0 +1,1 @@
+# Tu wklej Twój kod bota z pliku discord_bot.py – już jest kompletny

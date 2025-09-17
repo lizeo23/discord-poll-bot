@@ -1,0 +1,14 @@
+services:
+  - type: worker
+    name: discord-poll-bot
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: python bot.py
+    plan: free
+    envVars:
+      - key: DISCORD_TOKEN
+        sync: false
+      - key: CHANNEL_ID
+        sync: false
+      - key: BOT_NAME
+        value: KillerekBot

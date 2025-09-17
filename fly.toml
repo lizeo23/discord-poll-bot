@@ -17,6 +17,3 @@ primary_region = 'waw'
 
 [processes]
   app = "python bot.py"
-
-[restart]
-  policy = "always"

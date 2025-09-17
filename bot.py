@@ -289,4 +289,4 @@ async def on_ready():
     daily_poll_task.start()
 
 bot.run(TOKEN)
-ota z pliku discord_bot.py – już jest kompletny
+

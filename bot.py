@@ -72,7 +72,7 @@ from discord.ext import tasks
 @tasks.loop(minutes=1)
 async def daily_poll_task():
     now = datetime.now()
-    if now.hour == 7 and now.minute == 0:
+    if now.hour == 0 and now.minute == 1:
         channel = bot.get_channel(CHANNEL_ID)
         if channel:
             await create_daily_poll(channel)
@@ -286,6 +286,8 @@ async def on_ready():
     channel = bot.get_channel(CHANNEL_ID)
     if channel:
         await init_polls_from_channel(channel)
+        # Tworzenie ankiety natychmiast po starcie jeśli jej nie ma
+        await create_daily_poll(channel)
     daily_poll_task.start()
 
 bot.run(TOKEN)

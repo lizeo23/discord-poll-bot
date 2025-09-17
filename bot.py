@@ -83,6 +83,8 @@ from datetime import datetime, timedelta
 # ---------------------- KONFIGURACJA ----------------------
 TOKEN = os.getenv("DISCORD_TOKEN")
 CHANNEL_ID = int(os.getenv("CHANNEL_ID", "0"))
+if not TOKEN or not CHANNEL_ID:
+    raise RuntimeError("Missing env")
 
 # Nazwa bota
 BOT_NAME = "KillerekBot"
